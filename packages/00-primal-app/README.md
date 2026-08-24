@@ -1,3 +1,5 @@
+Первое созданное Реакт приложение из Vite оставлено отдельно в primal-app-00 как пример кода и исходного проекта пупупу
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

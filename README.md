@@ -20,8 +20,8 @@ TestAppReact/
 └── package-lock.json — зафиксированные версии зависимостей
 ```
 
-[LEARNINGPLAN.md](./LEARNINGPLAN.md)— учебный план
-[LEARNINGNOTES.md](./LEARNINGNOTES.md)— заметки-конспекты
+[LEARNINGPLAN.md](./LEARNINGPLAN.md) — учебный план <br>
+[LEARNINGNOTES.md](./LEARNINGNOTES.md) — заметки-конспекты
 
 ---
 

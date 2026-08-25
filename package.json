@@ -1,6 +1,9 @@
 {
   "name": "react-learning",
   "private": true,
+  "scripts": {
+    "new:lesson": "node scripts/new-lesson.js"
+  },
   "workspaces": [
     "packages/*"
   ]

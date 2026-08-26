@@ -4,8 +4,8 @@
 
 Здесь собраны небольшие уроки, каждая отдельная тема находится в своём package внутри `packages/`. Основной учебный материал и план обучения [с сайта METANIT](https://metanit.com/web/react/)
 
-[Код на Гитхабе](https://github.com/lena-don/TestAppReact)
-[Код на Гитверсе](https://gitverse.ru/lena-don/TestAppReact)
+[🔗 Код на Гитхабе](https://github.com/lena-don/TestAppReact)<br>
+[🔗 Код на Гитверсе](https://gitverse.ru/lena-don/TestAppReact)
 
 ## 📁 Структура проекта
 ```

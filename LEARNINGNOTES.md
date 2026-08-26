@@ -10,13 +10,13 @@
 
 - [00 - Исходное приложение React](#00-primal-app--исходное-приложение)
 - [01 — TypeScript]
-- [02 - JSX](#02--jsx)
-- [03 - Rendering](#03--rendering)
-- [04 - Components](#04--components)
-- [05 - Props](#05--props)
-- [06 - Event](#06--event)
-- [07 - Compound components](#07--compound-components)
-- [08 - Functional component & useState](#08--functional-component-useState)
+- [02 - JSX](#02-jsx)
+- [03 - Rendering](#03-rendering)
+- [04 - Components](#04-components)
+- [05 - Props](#05-props)
+- [06 - Event](#06-event)
+- [07 - Compound components](#07-compound-components)
+- [08 - Functional component & useState](#08-functional-component&useState)
 
 ---
 
@@ -179,7 +179,7 @@
 
 ---
 
-## 05–Props
+## 05-Props
 
 <details>
 <summary>05-Конспекты/заметки</summary>
@@ -250,7 +250,7 @@
 
 ---
 
-## 07–Compound components
+## 07-Compound components
 
 <details>
 <summary>07-Конспекты/заметки</summary>

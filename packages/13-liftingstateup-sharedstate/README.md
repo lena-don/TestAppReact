@@ -1,4 +1,4 @@
 ## ▶️ Запуск проекта
 ```
-npm run dev -w 11-component-lifecycle
+npm run dev -w 13-liftingstateup-sharedstate
 ```

@@ -1,4 +1,4 @@
 ## ▶️ Запуск проекта
 ```
-npm run dev -w 06-event
+npm run dev -w 01-typescript
 ```

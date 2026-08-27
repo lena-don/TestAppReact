@@ -20,10 +20,9 @@ class Clock extends Component {
   }
 
 
-  // Удаляем компонент.
-  // Это приведёт к вызову componentWillUnmount()? Сделать проверку через логи там, где нужна наглядность жизненного цикла компонента (из урока 11)
+  // Удаляем компонент
   unmount() {
-    this.unmount()
+    this.props.root.unmount()
   }
 
 
@@ -77,7 +76,120 @@ class Clock extends Component {
   }
 }
 
-function App() {
+// 2. Functional Component + useEffect
+function FunctionalClock({ root }) {
+
+  const [state, setState] = useState({
+    date: new Date()
+  })
+
+
+  // Удаляем React root.
+  // Удаление root = удаление всего на странице
+  function unmount() {
+    root.unmount()
+  }
+
+
+  useEffect(() => {
+
+    // useEffect с [] выполняется один раз после монтирования компонента
+    //
+    // Создаём ресурс — часы
+    const timerId = setInterval(
+      () => setState({
+        date: new Date()
+      }),
+      1000
+    )
+
+    console.log('componentDidMount()')
+
+
+    // Cleanup-функция выполняется при удалении компонента
+    return () => {
+
+      clearInterval(timerId)
+
+      console.log(
+        'componentWillUnmount()'
+      )
+    }
+
+  }, []) // эффект выполняется только один раз
+
+
+  return (
+    <div>
+
+      <h2>
+        Текущее время:{' '}
+        {state.date.toLocaleTimeString()}
+      </h2>
+
+      <button onClick={unmount}>
+        Удалить компонент
+      </button>
+
+    </div>
+  )
+}
+
+// 3. Доп пример без root.unmount(),
+// так как в настоящем Реакт приложении
+// вряд ли понадобится размонтировать
+// весь React root
+class Clock3 extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      date: new Date()
+    }
+
+    this.unmount = this.unmount.bind(this)
+  }
+
+  unmount() {
+    this.props.root.unmount()
+  }
+
+  componentDidMount() {
+    this.timerId = setInterval(
+      () => this.tick(),
+      1000
+    )
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerId)
+
+    console.log('componentWillUnmount()')
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>
+          Текущее время:{' '}
+          {this.state.date.toLocaleTimeString()}
+        </h2>
+      </div>
+    )
+  }
+}
+
+
+function App({ root }) {
+
+  const [show, setShow] = useState(true) // Для третьего примера, в котором происходит удаление только одного компонента, а не очищение всего React root.
 
   return (
     <>
@@ -92,9 +204,35 @@ function App() {
           а удаляются в componentWillUnmount().
         </p>
 
-        <Clock />
+        <Clock root={root} />
 
       </section>
+
+      <section>
+
+        <h2>
+          2. Functional Component
+        </h2>
+
+        <p>
+          В функциональном компоненте создание
+          и освобождение ресурса выполняется
+          через useEffect().
+        </p>
+
+        <FunctionalClock root={root} />
+
+      </section>
+
+      <section>
+
+      {show && <Clock3 />}
+
+      <button onClick={() => setShow(false)}>
+        Удалить только эти часы
+      </button>
+
+    </section>
     </>
   )
 }

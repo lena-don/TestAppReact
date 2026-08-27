@@ -73,7 +73,9 @@ class Clock extends Component {
 }
 
 function App() {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(true) // Это отдельно разобрать и вынести,
+  // в учебных материалах сделано по-другому, так как там другая структура проекта,
+  // а у меня на базе стандартного Реакт-приложения из Вита.
 
   return (
     <>

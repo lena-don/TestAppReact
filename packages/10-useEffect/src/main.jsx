@@ -58,7 +58,7 @@ function UserAllEffects() {
     document.title = `Привет, ${name}`
 
     // Для наглядности — смотреть в консоль.
-    console.log('useEffect: сработал')
+    console.log('(2) useEffect: сработал')
   })
 
   const changeName = (event) => {
@@ -116,7 +116,7 @@ function UserNameEffect() {
   useEffect(() => {
     document.title = `Привет, ${name}`
 
-    console.log('useEffect: изменилось имя')
+    console.log('(3) useEffect: изменилось имя')
   }, [name])
   // Эффект срабатывает при изменении name.
 
@@ -173,7 +173,7 @@ function UserOnce() {
   useEffect(() => {
     document.title = `Привет, ${name}`
 
-    console.log('useEffect: первый рендер')
+    console.log('(4) useEffect: первый рендер')
   }, [])
   // [] — эффект выполняется только один раз при первом рендеринге!!
 
@@ -219,7 +219,7 @@ function UserCleanup() {
       unmount
     )
 
-    console.log('EventListener добавлен')
+    console.log('(5) EventListener добавлен')
 
     // Функция внутри return выполняется при очистке эффекта.
     return () => {
@@ -233,8 +233,7 @@ function UserCleanup() {
   }, [])
 
   function unmount() {
-    // Удаляем React-приложение с DOM.
-    root.unmount()
+    root.unmount() // Функция unmount() удаляет данный компонент с веб-страницы, то есть здесь она удаляет вообще всё в root
   }
 
   return (
@@ -254,7 +253,7 @@ function UserCleanup() {
       </p>
 
       <p>
-        Кнопка «Удалить компонент» находится в самом низу,
+        Кнопка «Удалить React-компоненты» находится в самом низу,
         за пределами React-приложения.
       </p>
     </section>
@@ -270,7 +269,7 @@ function NameLogger() {
   const [name, setName] = useState('Мария')
 
   useEffect(() => {
-    console.log(`Имя изменилось на: ${name}`)
+    console.log(`(доп 1) Имя изменилось на: ${name}`)
   }, [name])
 
   return (
@@ -297,11 +296,11 @@ function NameLogger() {
 // - при удалении компонента очистит interval.
 //
 // Наглядно показать, зачем useEffect
-// может возвращать функцию очистки.
+// может возвращать функцию очистки
 
 function Timer() {
   useEffect(() => {
-    console.log('Таймер запущен')
+    console.log('(доп 2) Таймер запущен')
 
     const timerId = setInterval(() => {
       console.log('Прошла 1 секунда')
@@ -318,10 +317,10 @@ function Timer() {
 
   return (
     <section>
-      <h2>Дополнительное задание 2</h2>
+      <h2>Доп задание 2</h2>
 
       <p>
-        Чтобы проверить, работает ли таймер, нужно открыть консоль браузера.
+        Чтобы проверить, работает ли таймер — открыть консоль браузера.
       </p>
     </section>
   )
@@ -361,6 +360,6 @@ const unmountButton =
 
 unmountButton.id = 'unmountBtn'
 unmountButton.textContent =
-  'Удалить React-компоненты'
+  'Удалить React-компоненты' // Когда компонент удаляется, React выполняет функцию очистки useEffect; это будет видно в консоле на примере таймера
 
 document.body.appendChild(unmountButton)

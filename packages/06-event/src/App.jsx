@@ -91,7 +91,10 @@ function ParametersButton() {
 // 7. Классовый компонент:
 class ClassClickButton extends Component {
   constructor(props) {
-    super(props)
+    super(props)  // Вызов super(props) в React нужен для того,
+    // чтобы инициализировать родительский класс React.Component
+    // и получить корректный доступ к this.props внутри
+    // конструктора классового компонента
 
     this.press = this.press.bind(this) // this — ключевое слово, указывающее на текущий объект
   }

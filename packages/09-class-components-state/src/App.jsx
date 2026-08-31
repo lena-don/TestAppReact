@@ -4,7 +4,11 @@ function App() {
     // Простое состояние класса:
     class Hello extends Component {
     constructor(props) {    // state задаётся в constructor класса
-        super(props)          //js-напоминание: super(props) нужен для того, чтобы инициализировать конструктор базового класса React.Component и получить корректный доступ к this.props внутри конструктора классового компонента.
+        super(props)          // js-напоминание-1: super(props)
+        // нужен для того, чтобы инициализировать
+        // конструктор базового класса React.Component
+        // и получить корректный доступ к this.props
+        // внутри конструктора классового компонента.
         this.state = {
         message: 'Привет, React!',
         }

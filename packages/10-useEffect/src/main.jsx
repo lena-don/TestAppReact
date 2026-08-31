@@ -332,7 +332,6 @@ const root = createRoot(
 
 root.render(
   <>
-    <h1>Хук useEffect</h1>
 
     <User />
 

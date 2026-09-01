@@ -24,20 +24,3 @@ hr {
   margin: 25px 0;
   border: 1px dashed #ccc;
 }
-
-.theme {
-  transition: 0.3s;
-}
-
-.theme-light {
-  background-color: #fff;
-  color: #222;
-}
-
-.theme-dark {
-  background-color: #222;
-  color: #fff;
-  h2 {
-  color: #fff;
-  }
-}

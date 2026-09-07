@@ -73,7 +73,10 @@ function UserFormStorage() {
 
       console.log('Данные сохранены!')
     }
-  }, []) // Эффект срабатывает только один раз - при самом первом рендеринге
+  }, []) // Эффект срабатывает только один раз -
+  // при самом первом рендеринге.
+  // Простое правило: `seEffect(..., [])` → один раз;
+  // `useEffect(..., [name])` → когда меняется name
 
   const changeName = (event) => {
     setName(event.target.value)
@@ -143,7 +146,6 @@ function StorageExample() {
 
 // В функциональных компонентах используется useRef().
 // В class-компонентах из используется createRef().
-
 
 class ClassUserForm extends React.Component {
   constructor(props) {

@@ -24,22 +24,3 @@ hr {
   margin: 25px 0;
   border: 1px dashed #ccc;
 }
-
-.navigation {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-
-  margin: 10px 0 15px;
-
-  a {
-    text-decoration: none;
-  }
-
-  .active {
-    padding: 6px;
-
-    background-color: #486ca3;
-    color: #fff;
-  }
-}
